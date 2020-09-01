@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shop_app/screens/signin/signin_screen.dart';
 
 import './splash_content.dart';
 import '../../../constans.dart';
@@ -67,7 +68,9 @@ class _SplashBodyState extends State<SplashBody> {
                     ),
                     DefaultButton(
                       text: 'Continue',
-                      press: () {},
+                      press: () {
+                        Navigator.pushNamed(context, SigninScreen.routeName);
+                      },
                     ),
                     Spacer(),
                   ],

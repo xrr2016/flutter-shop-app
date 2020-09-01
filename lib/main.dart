@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:shop_app/constans.dart';
 import 'package:shop_app/routes.dart';
 import 'package:shop_app/screens/splash/splash_screen.dart';
+
+import './theme.dart';
 
 void main() {
   runApp(MyApp());
@@ -14,15 +15,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Shop App',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        fontFamily: "Muli",
-        textTheme: TextTheme(
-          bodyText1: TextStyle(color: kTextColor),
-          bodyText2: TextStyle(color: kTextColor),
-        ),
-        scaffoldBackgroundColor: Colors.white,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
+      theme: theme(),
       // home: SplashScreen(),
       routes: routes,
       initialRoute: SplashScreen.routeName,
