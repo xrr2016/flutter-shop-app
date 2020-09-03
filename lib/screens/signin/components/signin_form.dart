@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:shop_app/components/custom_suffix_icon.dart';
 import 'package:shop_app/components/default_button.dart';
 import 'package:shop_app/components/form_errors.dart';
+import 'package:shop_app/screens/fogot_password/fogot_password_screen.dart';
 
 import '../../../constans.dart';
 import '../../../size_config.dart';
@@ -41,10 +42,15 @@ class _SignFormState extends State<SignForm> {
                   }),
               Text('Remember me'),
               Spacer(),
-              Text(
-                'Forgot password',
-                style: TextStyle(
-                  decoration: TextDecoration.underline,
+              GestureDetector(
+                onTap: () => Navigator.of(context).pushNamed(
+                  FogotPasswordScreen.routeName,
+                ),
+                child: Text(
+                  'Forgot password',
+                  style: TextStyle(
+                    decoration: TextDecoration.underline,
+                  ),
                 ),
               ),
             ],

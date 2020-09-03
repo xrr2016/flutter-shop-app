@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:shop_app/components/not_account_text.dart';
 import 'package:shop_app/components/socal_card.dart';
 import 'package:shop_app/constans.dart';
+import 'package:shop_app/screens/fogot_password/fogot_password_screen.dart';
 
 import './signin_form.dart';
 import '../../../size_config.dart';
@@ -52,23 +54,7 @@ class SigninBody extends StatelessWidget {
                   ],
                 ),
                 SizedBox(height: getProportionateScreenHeight(20)),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      "Don't have an account? ",
-                      style:
-                          TextStyle(fontSize: getProportionateScreenWidth(16)),
-                    ),
-                    Text(
-                      "Sign Up",
-                      style: TextStyle(
-                        fontSize: getProportionateScreenWidth(16),
-                        color: kPrimaryColor,
-                      ),
-                    ),
-                  ],
-                ),
+                NotAccountText(),
               ],
             ),
           ),
