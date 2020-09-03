@@ -3,6 +3,7 @@ import 'package:shop_app/components/custom_suffix_icon.dart';
 import 'package:shop_app/components/default_button.dart';
 import 'package:shop_app/components/form_errors.dart';
 import 'package:shop_app/screens/fogot_password/fogot_password_screen.dart';
+import 'package:shop_app/screens/login_success/login_success_screen.dart';
 
 import '../../../constans.dart';
 import '../../../size_config.dart';
@@ -63,6 +64,7 @@ class _SignFormState extends State<SignForm> {
               print(_errors.length);
               if (_formKey.currentState.validate()) {
                 _formKey.currentState.save();
+                Navigator.pushNamed(context, LoginSuccessScreen.routeName);
               }
             },
           ),
@@ -86,15 +88,15 @@ class _SignFormState extends State<SignForm> {
         setState(() {});
         return null;
       },
-      validator: (value) {
-        if (value.isEmpty && !_errors.contains(kPassNullError)) {
-          _errors.add(kPassNullError);
-        } else if (value.length < 8 && !_errors.contains(kShortPassError)) {
-          _errors.add(kShortPassError);
-        }
-        setState(() {});
-        return null;
-      },
+      // validator: (value) {
+      //   if (value.isEmpty && !_errors.contains(kPassNullError)) {
+      //     _errors.add(kPassNullError);
+      //   } else if (value.length < 8 && !_errors.contains(kShortPassError)) {
+      //     _errors.add(kShortPassError);
+      //   }
+      //   setState(() {});
+      //   return "";
+      // },
       decoration: InputDecoration(
         labelText: "Password",
         hintText: "Enter your Password",
@@ -120,16 +122,16 @@ class _SignFormState extends State<SignForm> {
         }
         setState(() {});
       },
-      validator: (value) {
-        if (value.isEmpty && !_errors.contains(kEmailNullError)) {
-          _errors.add(kEmailNullError);
-        } else if (!emailValidatorRegExp.hasMatch(value) &&
-            !_errors.contains(kInvalidEmailError)) {
-          _errors.add(kInvalidEmailError);
-        }
-        setState(() {});
-        return null;
-      },
+      // validator: (value) {
+      //   if (value.isEmpty && !_errors.contains(kEmailNullError)) {
+      //     _errors.add(kEmailNullError);
+      //   } else if (!emailValidatorRegExp.hasMatch(value) &&
+      //       !_errors.contains(kInvalidEmailError)) {
+      //     _errors.add(kInvalidEmailError);
+      //   }
+      //   setState(() {});
+      //   return "";
+      // },
       decoration: InputDecoration(
         labelText: "Email",
         hintText: "Enter your email",

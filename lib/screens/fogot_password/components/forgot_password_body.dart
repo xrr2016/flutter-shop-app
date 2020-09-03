@@ -79,7 +79,7 @@ class _ForgotPasswordFormState extends State<ForgotPasswordForm> {
                 _errors.add(kInvalidEmailError);
               }
               setState(() {});
-              return null;
+              return "";
             },
             decoration: InputDecoration(
               labelText: "Email",
