@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:shop_app/components/custom_suffix_icon.dart';
 import 'package:shop_app/components/default_button.dart';
 import 'package:shop_app/components/form_errors.dart';
+import 'package:shop_app/screens/complete_proflie/complete_profile_screen.dart';
 
 import '../../../constans.dart';
 import '../../../size_config.dart';
@@ -48,7 +49,7 @@ class _SignupFormState extends State<SignupForm> {
             text: 'Continue',
             press: () {
               if (_formKey.currentState.validate()) {
-                // Go
+                Navigator.pushNamed(context, CompleteProfileScreen.routeName);
               }
             },
           )
@@ -71,12 +72,12 @@ class _SignupFormState extends State<SignupForm> {
         return null;
       },
       validator: (value) {
-        if (value.isEmpty) {
-        } else if (password != confirmPassword) {
-          addError(error: kMatchPassError);
-        }
-        setState(() {});
-        return "";
+        // if (value.isEmpty) {
+        // } else if (password != value) {
+        //   addError(error: kMatchPassError);
+        // }
+        // setState(() {});
+        // return "";
       },
       decoration: InputDecoration(
         labelText: "Confirm Password",
@@ -106,13 +107,13 @@ class _SignupFormState extends State<SignupForm> {
         return null;
       },
       validator: (value) {
-        if (value.isEmpty && !_errors.contains(kPassNullError)) {
-          _errors.add(kPassNullError);
-        } else if (value.length < 8 && !_errors.contains(kShortPassError)) {
-          _errors.add(kShortPassError);
-        }
-        setState(() {});
-        return "";
+        // if (value.isEmpty && !_errors.contains(kPassNullError)) {
+        //   _errors.add(kPassNullError);
+        // } else if (value.length < 8 && !_errors.contains(kShortPassError)) {
+        //   _errors.add(kShortPassError);
+        // }
+        // setState(() {});
+        // return "";
       },
       decoration: InputDecoration(
         labelText: "Password",
@@ -140,13 +141,13 @@ class _SignupFormState extends State<SignupForm> {
         setState(() {});
       },
       validator: (value) {
-        if (value.isEmpty) {
-          addError(error: kEmailNullError);
-        } else if (!emailValidatorRegExp.hasMatch(value)) {
-          addError(error: kInvalidEmailError);
-        }
-        setState(() {});
-        return "";
+        // if (value.isEmpty) {
+        //   addError(error: kEmailNullError);
+        // } else if (!emailValidatorRegExp.hasMatch(value)) {
+        //   addError(error: kInvalidEmailError);
+        // }
+        // setState(() {});
+        // return "";
       },
       decoration: InputDecoration(
         labelText: "Email",
