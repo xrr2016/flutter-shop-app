@@ -21,6 +21,18 @@ class _SignFormState extends State<SignForm> {
   String password;
   bool remember = false;
 
+  void addError({String error}) {
+    if (!_errors.contains(error)) {
+      _errors.add(error);
+    }
+  }
+
+  void removeError({String error}) {
+    if (_errors.contains(error)) {
+      _errors.remove(error);
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Form(
@@ -61,7 +73,6 @@ class _SignFormState extends State<SignForm> {
           DefaultButton(
             text: "Continue",
             press: () {
-              print(_errors.length);
               if (_formKey.currentState.validate()) {
                 _formKey.currentState.save();
                 Navigator.pushNamed(context, LoginSuccessScreen.routeName);
@@ -110,6 +121,7 @@ class _SignFormState extends State<SignForm> {
 
   TextFormField buildEmailFormField() {
     return TextFormField(
+      keyboardType: TextInputType.emailAddress,
       onSaved: (newValue) {
         email = newValue;
       },
