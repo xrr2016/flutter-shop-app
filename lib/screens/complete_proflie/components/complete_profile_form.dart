@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:shop_app/components/custom_suffix_icon.dart';
 import 'package:shop_app/components/default_button.dart';
 import 'package:shop_app/components/form_errors.dart';
+import 'package:shop_app/screens/otp/otp_screen.dart';
 
 import '../../../constans.dart';
 import '../../../size_config.dart';
@@ -51,7 +52,8 @@ class _CompleteProfileFormState extends State<CompleteProfileForm> {
             text: 'Continue',
             press: () {
               if (_formKey.currentState.validate()) {
-                // GO
+                // GO Otp
+                Navigator.pushNamed(context, OtpScreen.routeName);
               }
             },
           ),
@@ -72,14 +74,14 @@ class _CompleteProfileFormState extends State<CompleteProfileForm> {
         }
         setState(() {});
       },
-      validator: (value) {
-        if (value.isEmpty) {
-          addError(error: kAddressNullError);
-          return "";
-        }
-        setState(() {});
-        return null;
-      },
+      // validator: (value) {
+      //   if (value.isEmpty) {
+      //     addError(error: kAddressNullError);
+      //     return "";
+      //   }
+      //   setState(() {});
+      //   return null;
+      // },
       decoration: InputDecoration(
         labelText: "Address",
         hintText: "Enter your address",
@@ -103,14 +105,14 @@ class _CompleteProfileFormState extends State<CompleteProfileForm> {
         }
         setState(() {});
       },
-      validator: (value) {
-        if (value.isEmpty) {
-          addError(error: kPhoneNumberNullError);
-          return "";
-        }
-        setState(() {});
-        return null;
-      },
+      // validator: (value) {
+      //   if (value.isEmpty) {
+      //     addError(error: kPhoneNumberNullError);
+      //     return "";
+      //   }
+      //   setState(() {});
+      //   return null;
+      // },
       decoration: InputDecoration(
         labelText: "Phone Number",
         hintText: "Enter your phone number",
@@ -151,14 +153,14 @@ class _CompleteProfileFormState extends State<CompleteProfileForm> {
         }
         setState(() {});
       },
-      validator: (value) {
-        if (value.isEmpty) {
-          addError(error: kNamelNullError);
-          return "";
-        }
-        setState(() {});
-        return null;
-      },
+      // validator: (value) {
+      //   if (value.isEmpty) {
+      //     addError(error: kNamelNullError);
+      //     return "";
+      //   }
+      //   setState(() {});
+      //   return null;
+      // },
       decoration: InputDecoration(
         labelText: "First Name",
         hintText: "Enter your first name",

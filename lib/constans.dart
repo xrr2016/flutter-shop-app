@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'size_config.dart';
+import './size_config.dart';
 
 const kPrimaryColor = Color(0xFFFF7643);
 const kPrimaryLightColor = Color(0xFFFFECDF);
@@ -32,3 +32,19 @@ final headingStyle = TextStyle(
   color: Colors.black,
   height: 1.5,
 );
+
+final otpInputDecoration = InputDecoration(
+  contentPadding: EdgeInsets.symmetric(
+    vertical: getProportionateScreenHeight(15),
+  ),
+  border: outlineInputBorder(),
+  enabledBorder: outlineInputBorder(),
+  focusedBorder: outlineInputBorder(),
+);
+
+OutlineInputBorder outlineInputBorder() {
+  return OutlineInputBorder(
+    borderRadius: BorderRadius.circular(15),
+    borderSide: BorderSide(color: kTextColor),
+  );
+}
